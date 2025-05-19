@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const cursos = [
   { id: 1, nombre: 'Matemáticas I', horas: 4, prereq: [] },
   { id: 2, nombre: 'Programación Web', horas: 6, prereq: [1] },
-  { id: 3, nombre: 'Bases de Datos', horas: 5, prereq: [2] }
+  { id: 3, nombre: 'Bases de Datos', horas: 5, prereq: [2] },
+  { id: 4, nombre: 'cultura y emprendimiento I', horas: 3, prereq: [] },
+  { id: 5, nombre: 'cultura y emprendimiento II', horas: 4, prereq: [4] },
+  { id: 6, nombre: 'idiomas I', horas: 4, prereq: [] },
+  { id: 7, nombre: 'Fisica mecanica', horas: 6, prereq: [] },
+  { id: 8, nombre: 'ingenieria de software', horas: 5, prereq: [1] },
 ];
 
 // Función para recorrer recursivamente prerrequisitos

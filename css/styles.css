@@ -1,9 +1,9 @@
 :root {
-  --primary: #0055a5;
-  --accent: #fdd835;
+  --primary: #5fd369;
+  --accent: #30d85a;
   --text: #333;
-  --bg: #f9f9f9;
-  --font: 'Arial', sans-serif;
+  --bg: #a8e6a3;
+  --font: 'Montserrat', sans-serif;
 }
 
 * {
@@ -12,12 +12,47 @@
 }
 
 body {
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fafeebae;
+    color: #333;
+    line-height: 1.5;
+}
+/* 1) Limpia cualquier background anterior */
+#ean {
+  position: relative;
+  background: none;
+  min-height: 430px;  
+}
+/* 2) Crea el fondo con ::before */
+#ean::before {
+  content: '';
+  position: absolute;
+  inset: 0;                                   
+  background: url('../assets/img/ean.jpg') 
+              center/cover no-repeat;
+  opacity: 0.15;                               
+  z-index: 0;
 }
 
+/* 3) Asegura que el contenido esté sobre la imagen */
+.ean-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;                          /* espacio interno */
+  text-align: center;
+}
+
+
+.features{
+    padding: 0px 15px;
+}
+.features article i {
+  display: block;
+  color: var(--primary);
+  margin-bottom: .5rem;
+  
+  
+}
 header, footer {
   background: var(--primary);
   color: white;
@@ -76,6 +111,8 @@ main {
 }
 
 .curso-card {
+  display: flex;
+  flex-direction: column;
   background: white;
   padding: 1rem;
   border-radius: 6px;
@@ -92,12 +129,15 @@ main {
 }
 
 .curso-card button {
+  margin-top: auto;      
+  align-self: center;   
   background: var(--accent);
   border: none;
   padding: .5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background .2s;
+  align-content: center;
 }
 
 .curso-card button:hover {
@@ -111,12 +151,26 @@ main {
   margin-left: .5rem;
 }
 
-/* Flatpickr */
-.flatpickr-calendar {
-  margin-top: 1rem;
+#calendar {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
   .features { flex-direction: column; }
+}
+
+#bienvenida{
+  margin-top: 20px;
+  margin-bottom: 15px;
+ 
+}
+
+.descripción{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
