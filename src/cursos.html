@@ -2,13 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cursos – Gestión Académica</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header><h1>Lista de Cursos</h1></header>
-  <main id="lista-cursos"></main>
+  <main>
+    <label for="filtro-horas">Mostrar solo cursos de al menos 
+      <input type="number" id="filtro-horas" min="0" value="0"> horas
+    </label>
+    <div id="lista-cursos" class="grid-cursos"></div>
+  </main>
   <script src="../js/app.js"></script>
 </body>
 </html>

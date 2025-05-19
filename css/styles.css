@@ -1,49 +1,122 @@
 :root {
   --primary: #0055a5;
+  --accent: #fdd835;
   --text: #333;
+  --bg: #f9f9f9;
+  --font: 'Arial', sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font);
   color: var(--text);
-  background: #f9f9f9;
+  background: var(--bg);
+  line-height: 1.5;
 }
 
 header, footer {
   background: var(--primary);
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 1rem;
 }
 
+header .tagline {
+  font-size: .9rem;
+  color: var(--accent);
+}
+
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   justify-content: center;
-  gap: 1rem;
   background: #e1e1e1;
-  padding: 0.5rem;
+  padding: .5rem;
 }
 
 nav a {
   text-decoration: none;
   color: var(--text);
+  margin: 0 1rem;
 }
 
 main {
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
-  nav ul {
-    justify-content: flex-start;
-    gap: 2rem;
-    padding: 1rem 2rem;
-  }
+.features {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.features article {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  transition: transform .2s;
+}
+
+.features article:hover {
+  transform: translateY(-3px);
+}
+
+/* GRID PARA CURSOS */
+.grid-cursos {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.curso-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  transition: box-shadow .2s;
+}
+
+.curso-card:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,.15);
+}
+
+.curso-card h3 {
+  margin-bottom: .5rem;
+}
+
+.curso-card button {
+  background: var(--accent);
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.curso-card button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* INPUT FILTRO */
+#filtro-horas {
+  width: 4rem;
+  margin-left: .5rem;
+}
+
+/* Flatpickr */
+.flatpickr-calendar {
+  margin-top: 1rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  .features { flex-direction: column; }
 }
